@@ -33,14 +33,20 @@
       <stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="wingG" x1="1" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8c2614"/>
-      <stop offset=".6" stop-color="#5a160d"/>
-      <stop offset="1" stop-color="#300b07"/>
+      <stop offset="0" stop-color="#7a0f0a"/>
+      <stop offset=".55" stop-color="#3a0806"/>
+      <stop offset="1" stop-color="#120303"/>
     </linearGradient>
     <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#4a1a10"/>
-      <stop offset="1" stop-color="#220d09"/>
+      <stop offset="0" stop-color="#2a0c09"/>
+      <stop offset="1" stop-color="#0c0303"/>
     </linearGradient>
+    <linearGradient id="hornG" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#2a1c12"/>
+      <stop offset=".5" stop-color="#9c8462"/>
+      <stop offset="1" stop-color="#f0e3c6"/>
+    </linearGradient>
+    <filter id="lavaGlow" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
     <radialGradient id="glow">
       <stop offset="0" stop-color="#ff8a3a" stop-opacity=".55"/>
       <stop offset="1" stop-color="#ff5a1a" stop-opacity="0"/>
@@ -72,7 +78,9 @@
       .bolt   { opacity: 0; animation: lightning 9s linear 4s infinite; }
       .e      { animation: rise 6s linear infinite; }
       .s      { animation: fall 9s linear infinite; }
-      .eye    { animation: eye 2s ease-in-out infinite alternate; }
+      .eye    { animation: eye 1.4s ease-in-out infinite alternate; }
+      .lava   { animation: lava 1.8s ease-in-out infinite alternate; }
+      .puff   { animation: puff 2.2s ease-out infinite; opacity: 0; transform-box: fill-box; transform-origin: center; }
 
       @keyframes flyIn   { from { transform: translate(-520px, 60px) rotate(-6deg); } to { transform: none; } }
       @keyframes bob     { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
@@ -88,7 +96,9 @@
       @keyframes lightning { 0%,90% { opacity: 0; } 91% { opacity: 1; } 92% { opacity: .2; } 93% { opacity: .9; } 96%,100% { opacity: 0; } }
       @keyframes rise    { from { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } to { transform: translateY(-340px); opacity: 0; } }
       @keyframes fall    { from { transform: translate(0,0); } to { transform: translate(-60px, 360px); } }
-      @keyframes eye     { from { opacity: .75; } to { opacity: 1; } }
+      @keyframes eye     { from { opacity: .7; } to { opacity: 1; } }
+      @keyframes lava    { from { opacity: .55; } to { opacity: 1; } }
+      @keyframes puff    { 0% { opacity: 0; transform: translate(0,0) scale(.4); } 15% { opacity: .55; } 100% { opacity: 0; transform: translate(-26px,-40px) scale(1.8); } }
     </style>
   </defs>
 
@@ -156,63 +166,80 @@
         <!-- fire glow -->
         <ellipse class="glowF" cx="640" cy="126" rx="420" ry="120" fill="url(#glow)"/>
 
-        <!-- far wing -->
+        <!-- far wing (tattered) -->
         <g class="wingF">
-          <path d="M276 132 L252 66 L288 16 L212 -24 Q200 10 152 6 Q140 40 116 56 Q130 82 128 106 Q190 126 236 142Z" fill="#2b0b07"/>
-          <path d="M276 132 L252 66 L288 16 M288 16 L212 -24 M288 16 L152 6 M288 16 L116 56 M288 16 L128 106" fill="none" stroke="#140504" stroke-width="3" stroke-linecap="round"/>
+          <path d="M276 132 L252 66 L290 12 L214 -30 Q206 4 156 -2 Q150 24 124 36 L132 52 L112 58 Q128 84 120 108 Q186 128 236 142Z" fill="#120303"/>
+          <path d="M276 132 L252 66 L290 12 M290 12 L214 -30 M290 12 L156 -2 M290 12 L118 50 M290 12 L120 108" fill="none" stroke="#070101" stroke-width="3.4" stroke-linecap="round"/>
         </g>
 
-        <!-- tail -->
-        <path d="M150 150 C110 150 80 170 50 196 C30 212 10 216 -16 214 L-14 222 C14 226 40 220 62 204 C90 184 116 168 160 166Z" fill="url(#bodyG)"/>
-        <path d="M-14 218 L-40 202 L-30 219 L-40 236Z" fill="#3a140e"/>
+        <!-- tail with axe blade -->
+        <path d="M150 150 C110 150 80 170 50 196 C30 212 10 216 -16 214 L-14 222 C14 226 40 220 62 204 C90 184 116 168 160 166Z" fill="url(#bodyG)" stroke="#a02a14" stroke-opacity=".45" stroke-width="1"/>
+        <path d="M-12 210 Q-30 188 -58 192 L-40 216 L-60 240 Q-30 244 -12 224Z" fill="#090202" stroke="#ff5a1a" stroke-opacity=".55" stroke-width="1.2"/>
 
         <!-- hind leg -->
-        <path d="M166 164 C176 184 160 196 172 214 L182 214 C172 196 190 186 182 162Z" fill="#24100c"/>
-        <path d="M172 214 l-6 6 M177 214 l0 8 M182 214 l6 6" stroke="#c9b08a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M166 162 C178 184 160 198 172 216 L184 216 C174 196 192 186 184 160Z" fill="#120505"/>
+        <path d="M170 216 q-6 4 -9 12 M177 216 q0 6 -2 13 M184 216 q6 4 8 12" stroke="#e3d3b0" stroke-width="2.6" stroke-linecap="round" fill="none"/>
 
         <!-- body -->
-        <path d="M352 114 C320 106 292 118 268 132 C236 150 200 150 160 148 C150 150 146 160 152 168 C190 176 240 178 270 162 C296 148 322 138 354 136Z" fill="url(#bodyG)" stroke="#963016" stroke-opacity=".5" stroke-width="1.2"/>
-        <path d="M168 164 C200 172 240 172 266 158 C290 146 316 136 350 132" fill="none" stroke="#9a4a22" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
-        <!-- dorsal spikes -->
-        <g fill="#170705">
-          <path d="M330 110 L334 96 L340 111Z"/><path d="M314 112 L316 98 L324 114Z"/><path d="M298 118 L298 103 L307 120Z"/>
-          <path d="M282 125 L280 110 L290 128Z"/><path d="M264 134 L261 119 L272 137Z"/><path d="M246 142 L242 128 L254 144Z"/>
-          <path d="M226 147 L221 134 L234 148Z"/><path d="M206 149 L200 137 L214 150Z"/><path d="M186 149 L179 138 L194 150Z"/>
-          <path d="M164 150 L156 140 L172 150Z"/><path d="M120 158 L110 150 L126 160Z"/><path d="M86 176 L74 170 L92 178Z"/><path d="M50 198 L38 194 L56 200Z"/>
+        <path d="M352 114 C320 106 292 118 268 132 C236 150 200 150 160 148 C150 150 146 160 152 168 C190 176 240 178 270 162 C296 148 322 138 354 136Z" fill="url(#bodyG)" stroke="#b02c14" stroke-opacity=".55" stroke-width="1.2"/>
+        <path d="M168 164 C200 172 240 172 266 158 C290 146 316 136 350 132" fill="none" stroke="#5a120a" stroke-opacity=".8" stroke-width="5" stroke-linecap="round"/>
+        <!-- lava cracks -->
+        <g class="lava" fill="none" stroke-linejoin="round" stroke-linecap="round">
+          <polyline points="345,124 330,120 316,126 300,122 286,130 270,135 254,144 238,148 222,153 204,152 186,156 168,155 146,160 124,164 102,172 80,184 58,198 36,208 14,214" stroke="#ff4a10" stroke-width="6" opacity=".55" filter="url(#lavaGlow)"/>
+          <polyline points="345,124 330,120 316,126 300,122 286,130 270,135 254,144 238,148 222,153 204,152 186,156 168,155 146,160 124,164 102,172 80,184 58,198 36,208 14,214" stroke="#ffc27a" stroke-width="1.6"/>
         </g>
+        <!-- dorsal blades with burning tips -->
+        <g fill="#060101"><path d="M343.0 110.0 Q334.4 94.0 326.0 79.0 L329.0 110.0Z"/><path d="M326.7 112.0 Q318.4 102.4 310.3 93.8 L313.3 112.0Z"/><path d="M310.5 117.0 Q302.5 102.3 294.5 88.7 L297.5 117.0Z"/><path d="M294.2 123.0 Q286.5 114.2 278.8 106.4 L281.8 123.0Z"/><path d="M277.9 130.0 Q270.5 116.7 263.1 104.3 L266.1 130.0Z"/><path d="M259.7 139.0 Q252.5 131.0 245.3 124.0 L248.3 139.0Z"/><path d="M239.4 146.0 Q232.6 134.0 225.6 123.0 L228.6 146.0Z"/><path d="M219.1 149.0 Q212.6 141.8 205.9 135.6 L208.9 149.0Z"/><path d="M198.9 149.0 Q192.6 138.3 186.1 128.7 L189.1 149.0Z"/><path d="M178.6 150.0 Q172.6 143.6 166.4 138.2 L169.4 150.0Z"/><path d="M156.3 153.0 Q150.7 143.7 144.7 135.3 L147.7 153.0Z"/><path d="M134.1 157.0 Q128.7 151.4 122.9 146.8 L125.9 157.0Z"/><path d="M109.8 165.0 Q104.7 157.0 99.2 150.0 L102.2 165.0Z"/><path d="M85.5 178.0 Q80.7 173.2 75.5 169.4 L78.5 178.0Z"/><path d="M61.3 194.0 Q56.8 187.3 51.7 181.7 L54.7 194.0Z"/><path d="M37.0 207.0 Q32.8 203.0 28.0 200.0 L31.0 207.0Z"/></g>
+        <g class="lava" fill="#ff5a1a"><path d="M331.0 88.6 L326.0 79.0 L327.0 89.6Z"/><path d="M299.2 97.4 L294.5 88.7 L295.5 98.4Z"/><path d="M267.4 112.2 L263.1 104.3 L264.0 113.2Z"/><path d="M229.7 130.0 L225.6 123.0 L226.6 131.0Z"/><path d="M189.9 134.9 L186.1 128.7 L187.1 135.9Z"/><path d="M148.1 140.7 L144.7 135.3 L145.6 141.7Z"/><path d="M102.3 154.5 L99.2 150.0 L100.2 155.5Z"/><path d="M54.6 185.3 L51.7 181.7 L52.7 186.3Z"/></g>
 
         <!-- front leg -->
-        <path d="M282 150 C292 170 280 182 292 198 L302 198 C292 182 306 172 296 146Z" fill="#24100c"/>
-        <path d="M292 198 l-6 6 M297 198 l0 8 M302 198 l6 6" stroke="#c9b08a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M282 148 C294 170 280 184 292 200 L304 200 C294 182 308 172 298 144Z" fill="#120505"/>
+        <path d="M290 200 q-6 4 -9 12 M297 200 q0 6 -2 13 M304 200 q6 4 8 12" stroke="#e3d3b0" stroke-width="2.6" stroke-linecap="round" fill="none"/>
 
-        <!-- near wing -->
+        <!-- near wing (tattered, clawed) -->
         <g class="wingN">
-          <path d="M262 140 L236 72 L272 20 L194 -20 Q182 16 134 10 Q122 46 98 62 Q112 88 110 114 Q170 134 214 150Z" fill="url(#wingG)"/>
-          <path d="M262 140 L236 72 L272 20 M272 20 L194 -20 M272 20 L134 10 M272 20 L98 62 M272 20 L110 114" fill="none" stroke="#2a0d08" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M272 20 l10 -8 l-4 10Z" fill="#c9b08a"/>
+          <path d="M262 140 L236 72 L274 16 L196 -28 Q190 8 138 2 Q134 28 108 40 L118 56 L94 62 Q114 88 104 116 Q170 134 214 150Z" fill="url(#wingG)" stroke="#a0200e" stroke-opacity=".35" stroke-width="1"/>
+          <path d="M274 16 Q220 30 170 40 M274 16 Q210 60 150 84 M274 16 Q240 80 190 120" fill="none" stroke="#0a0101" stroke-opacity=".6" stroke-width="1.2"/>
+          <path d="M262 140 L236 72 L274 16 M274 16 L196 -28 M274 16 L138 2 M274 16 L102 50 M274 16 L104 116" fill="none" stroke="#0a0202" stroke-width="4" stroke-linecap="round"/>
+          <path d="M262 140 L236 72 L274 16" fill="none" stroke="#a02a14" stroke-opacity=".45" stroke-width="1.2"/>
+          <g fill="#e3d3b0">
+            <path d="M272 16 q16 -10 22 2 l-14 4Z"/>
+            <path d="M196 -28 l-8 -8 l10 4Z"/><path d="M138 2 l-9 -6 l10 2Z"/><path d="M102 50 l-10 -3 l9 6Z"/>
+          </g>
         </g>
 
-        <!-- horns -->
-        <path d="M358 106 C346 88 330 80 310 76 C326 86 338 98 348 112Z" fill="#b8a07a" stroke="#3a2a1a" stroke-width=".8"/>
-        <path d="M350 112 C334 104 318 102 300 104 C316 110 330 116 342 122Z" fill="#b8a07a" stroke="#3a2a1a" stroke-width=".8"/>
+        <!-- crown of horns -->
+        <g fill="url(#hornG)" stroke="#140c06" stroke-width=".8">
+          <path d="M362 104 C350 80 330 66 302 58 C322 72 340 90 350 112Z"/>
+          <path d="M352 110 C334 96 314 90 290 92 C312 100 330 110 342 120Z"/>
+          <path d="M346 124 C330 124 316 130 302 140 C318 136 332 134 346 132Z"/>
+          <path d="M374 102 C372 92 366 84 358 80 C364 90 366 98 368 106Z"/>
+        </g>
 
         <!-- lower jaw -->
         <g class="jaw">
-          <path d="M350 128 L414 127 C418 130 414 134 408 135 L360 139 L346 136Z" fill="#33130e"/>
-          <g fill="#efe6d2"><path d="M372 127 l2 -5 l2 5Z"/><path d="M382 127 l2 -5 l2 5Z"/><path d="M392 127 l2 -5 l2 5Z"/><path d="M402 127 l2 -5 l2 5Z"/></g>
-          <path d="M354 138 L342 148 L362 139Z" fill="#1a0705"/>
+          <path d="M348 128 L420 127 C424 130 420 135 413 136 L362 141 L344 137Z" fill="#170606" stroke="#a02a14" stroke-opacity=".5" stroke-width=".8"/>
+          <g fill="#f2e9d6"><path d="M366 127 l2 -6 l2 6Z"/><path d="M375 127 l2 -5 l2 5Z"/><path d="M384 127 l2 -5 l2 5Z"/><path d="M393 127 l2 -5 l2 5Z"/><path d="M402 127 l2 -6 l2 6Z"/><path d="M411 127 l2 -9 l2 9Z"/></g>
+          <path d="M356 140 L344 152 L366 141Z M372 139 L364 151 L380 139Z" fill="#060101"/>
         </g>
 
         <!-- skull -->
-        <path d="M340 116 C352 102 372 100 392 106 L416 113 C424 116 423 121 418 123 L392 126 L352 131 L340 132Z" fill="url(#bodyG)" stroke="#aa3c1c" stroke-opacity=".55" stroke-width="1"/>
-        <g fill="#efe6d2"><path d="M374 127 l2 5 l2 -5Z"/><path d="M386 126 l2 5 l2 -5Z"/><path d="M398 125 l2 5 l2 -5Z"/><path d="M408 124 l2 4 l2 -4Z"/></g>
-        <path d="M362 108 L384 110" stroke="#150504" stroke-width="3.2" stroke-linecap="round"/>
-        <path d="M344 120 L328 116 L342 127Z M346 127 L332 132 L346 131Z" fill="#1a0705"/>
-        <ellipse cx="414" cy="115" rx="1.8" ry="1" fill="#0c0302"/>
+        <path d="M338 116 L352 103 L380 102 L404 108 L422 114 C428 117 426 122 420 124 L392 127 L352 132 L338 133Z" fill="url(#bodyG)" stroke="#c0361a" stroke-opacity=".6" stroke-width="1"/>
+        <g fill="#060101"><path d="M392 107 l1 -7 l4 8Z"/><path d="M402 110 l1 -6 l4 7Z"/><path d="M412 113 l1 -5 l3 6Z"/></g>
+        <g fill="#f2e9d6"><path d="M368 128 l2 6 l2 -6Z"/><path d="M378 127 l2 9 l2 -9Z"/><path d="M388 127 l2 5 l2 -5Z"/><path d="M398 126 l2 5 l2 -5Z"/><path d="M408 125 l2 5 l2 -5Z"/><path d="M416 124 l2 9 l2 -9Z"/></g>
+        <path d="M362 103 L392 109 L388 113 L364 108Z" fill="#050101"/>
+        <path d="M346 121 L326 114 L342 128Z M348 128 L330 134 L348 132Z" fill="#060101"/>
+        <ellipse cx="418" cy="116" rx="2.2" ry="1.1" fill="#000"/>
+        <g fill="#5a5250">
+          <circle class="puff" cx="420" cy="112" r="5" style="animation-delay:0s"/>
+          <circle class="puff" cx="420" cy="112" r="4" style="animation-delay:-.8s"/>
+          <circle class="puff" cx="420" cy="112" r="6" style="animation-delay:-1.5s"/>
+        </g>
         <g class="eye">
-          <circle cx="378" cy="114" r="9" fill="#ff8a2a" opacity=".35" filter="url(#blur2)"/>
-          <ellipse cx="378" cy="114" rx="4" ry="2.6" fill="#ffbf3a"/>
-          <ellipse cx="378.4" cy="114" rx=".9" ry="2.4" fill="#120302"/>
+          <circle cx="380" cy="113" r="15" fill="#ff3a10" opacity=".45" filter="url(#blur6)"/>
+          <path d="M370 114 Q379 107 390 111 Q380 118 370 114Z" fill="#ffcf3a"/>
+          <path d="M373 114 Q380 109.5 387 111.4 Q380 116 373 114Z" fill="#ff5a1a"/>
+          <ellipse cx="380.5" cy="112.8" rx=".8" ry="2.8" fill="#000"/>
         </g>
 
         <!-- fire -->
