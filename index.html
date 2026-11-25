@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohit Gora · Software & AI Engineer</title>
+  <meta name="description" content="Mohit Gora — final-year CSE engineer at IIIT Manipur. Full-stack developer, ex-Data Scientist Associate Intern at Blackcoffer, building with Python, C++, Node.js, Kubernetes and AI/ML. Open to work." />
+  <meta name="keywords" content="Mohit Gora, Software Engineer, Full Stack Developer, AI ML Engineer, Data Scientist, IIIT Manipur, Portfolio, Open to work" />
+  <meta name="author" content="Mohit Gora" />
+  <meta name="theme-color" content="#0c0d0b" />
+
+  <!-- Social share preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mohit Gora · Software & AI Engineer — Open to Work" />
+  <meta property="og:description" content="Full-stack platforms, a Kubernetes-deployed distilled language model and a real-time sign-language translator. Let's build something together." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0d0b'/%3E%3Cpath d='M32 8c4 10 14 14 14 28a14 14 0 0 1-28 0c0-8 5-12 7-18 2 5 4 7 7 8-1-7-1-12 0-18z' fill='%23d9a441'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-flame"><span></span><span></span><span></span></div>
+    <p class="loader-text">Forging the realm<span class="dots"></span></p>
+  </div>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#home" class="brand" aria-label="Mohit Gora — home">
+      <span class="brand-mark">MG</span>
+      <span class="brand-name">Mohit Gora</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#journey">Journey</a>
+      <a href="#skills">Skills</a>
+      <a href="#ai">AI Lab</a>
+      <a href="#projects">Projects</a>
+      <a href="#beyond">Beyond Code</a>
+      <a href="dragon.html" class="nav-play"><i class="fa-solid fa-dragon"></i> Play</a>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <canvas id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <a href="#contact" class="open-badge">
+          <span class="pulse-dot"></span> Open to work · Full-time &amp; Internships
+        </a>
+
+        <p class="hero-eyebrow">Final-year B.Tech CSE · IIIT Manipur · Class of 2027</p>
+
+        <h1 class="hero-name">
+          <span class="line">Mohit</span>
+          <span class="line gold">Gora</span>
+        </h1>
+
+        <p class="hero-role">
+          <span class="role-static">I'm</span>
+          <span class="role-typed" id="typed" aria-live="polite">a Software Engineer</span><span class="caret">|</span>
+        </p>
+
+        <p class="hero-tagline">
+          I build software that holds up in production. So far that means role-based full-stack platforms, a
+          <strong>distilled language model running on Kubernetes</strong> with zero-downtime deploys, and a
+          real-time vision app that turns hand gestures into speech.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-fire"></i> See my work</a>
+          <a href="assets/Mohit_Gora_Resume.pdf" class="btn btn-ghost" download><i class="fa-solid fa-scroll"></i> Download resume</a>
+          <a href="dragon.html" class="btn btn-ghost btn-dragon"><i class="fa-solid fa-dragon"></i> Fly my dragon</a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/mohitgora950" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/mohit-goraaaa1234/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://leetcode.com/u/momon950/" target="_blank" rel="noopener" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+          <a href="mailto:mohitgora950@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://wa.me/919509951950" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <span class="mouse"><span class="wheel"></span></span>
+        <span class="scroll-text">Scroll · the story begins</span>
+      </a>
+    </section>
+
+    <!-- ============ STATS STRIP ============ -->
+    <section class="stats" aria-label="Highlights">
+      <div class="stat reveal"><span class="stat-num" data-count="70" data-suffix="M">0</span><span class="stat-label">parameter LLM distilled &amp; deployed</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count="97" data-suffix="%">0</span><span class="stat-label">valid structured output from the student model</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count="0" data-suffix="%">0</span><span class="stat-label">requests dropped during rolling updates</span></div>
+      <div class="stat reveal"><span class="stat-num" data-count="3" data-suffix=" mo">0</span><span class="stat-label">industry internship as a Data Scientist</span></div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="section-head reveal">
+        <span class="chapter">Chapter I</span>
+        <h2>The Origin</h2>
+        <p class="section-sub">Who I am, and why your team might want me in it.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="crest-wrap reveal">
+          <div class="crest" id="crest" tabindex="0" aria-label="Personal crest — hover or tap to flip">
+            <div class="crest-face crest-front">
+              <svg viewBox="0 0 200 240" class="crest-svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#f3d58b" />
+                    <stop offset=".5" stop-color="#c9932f" />
+                    <stop offset="1" stop-color="#7a5418" />
+                  </linearGradient>
+                  <linearGradient id="emberG" x1="0" y1="1" x2="0" y2="0">
+                    <stop offset="0" stop-color="#b8361c" />
+                    <stop offset=".6" stop-color="#ef7b2f" />
+                    <stop offset="1" stop-color="#ffd27a" />
+                  </linearGradient>
+                </defs>
+                <path d="M100 6 L188 34 V112 C188 170 148 210 100 234 C52 210 12 170 12 112 V34 Z" fill="#14150f" stroke="url(#goldG)" stroke-width="5" />
+                <path d="M100 22 L174 45 V112 C174 162 140 196 100 217 C60 196 26 162 26 112 V45 Z" fill="none" stroke="#c9932f" stroke-opacity=".35" stroke-width="1.5" />
+                <!-- circuit lines -->
+                <g stroke="#c9932f" stroke-opacity=".45" stroke-width="1.6" fill="none">
+                  <path d="M36 112 H56 L64 104" /><circle cx="67" cy="101" r="3" fill="#c9932f" />
+                  <path d="M164 112 H144 L136 104" /><circle cx="133" cy="101" r="3" fill="#c9932f" />
+                  <path d="M44 132 H62" /><circle cx="65" cy="132" r="2.5" fill="#c9932f" />
+                  <path d="M156 132 H138" /><circle cx="135" cy="132" r="2.5" fill="#c9932f" />
+                </g>
+                <!-- flame -->
+                <path d="M100 52 C108 72 128 80 128 108 A28 28 0 0 1 72 108 C72 92 82 84 86 72 C90 82 94 86 100 88 C98 74 98 64 100 52 Z" fill="url(#emberG)" />
+                <path d="M100 84 C104 94 112 98 112 110 A12 12 0 0 1 88 110 C88 102 94 98 96 92 C97 96 99 98 101 99 C100 94 100 90 100 84Z" fill="#ffe2a0" opacity=".9" />
+                <text x="100" y="170" text-anchor="middle" font-family="Cinzel, serif" font-weight="700" font-size="36" fill="url(#goldG)" letter-spacing="4">MG</text>
+                <text x="100" y="188" text-anchor="middle" font-family="Cinzel, serif" font-size="7.5" fill="#c9932f" letter-spacing="2">CODE · CRAFT</text>
+              </svg>
+            </div>
+            <div class="crest-face crest-back">
+              <h3>Quick facts</h3>
+              <ul>
+                <li><i class="fa-solid fa-graduation-cap"></i> B.Tech CSE, IIIT Manipur (2023–27)</li>
+                <li><i class="fa-solid fa-briefcase"></i> Ex-Data Scientist Associate Intern, Blackcoffer</li>
+                <li><i class="fa-solid fa-certificate"></i> C++ certified (IIT Bombay) · MongoDB</li>
+                <li><i class="fa-solid fa-language"></i> English · Hindi · Japanese (日本語, elementary)</li>
+                <li><i class="fa-solid fa-location-dot"></i> India · open to remote &amp; relocation</li>
+              </ul>
+            </div>
+          </div>
+          <p class="crest-hint"><i class="fa-solid fa-rotate"></i> Hover or tap the crest</p>
+        </div>
+
+        <div class="about-text reveal">
+          <p class="lead">
+            I'm Mohit, a Computer Science engineer who likes taking a messy problem and turning it into a
+            <em>clean, working system</em>.
+          </p>
+          <p>
+            I've worked across the stack. I built <strong>EduRate</strong>, a role-based platform with JWT auth, analytics dashboards and automated email reports.
+            I took a language model through <strong>knowledge distillation</strong>, containerised it and ran it on Kubernetes with autoscaling and CI/CD.
+            I also built a <strong>real-time computer-vision app</strong> that reads 21 hand landmarks per frame and speaks the gesture out loud.
+          </p>
+          <p>
+            As a <strong>Data Scientist Associate Intern at Blackcoffer</strong>, I wrote Python to clean and analyse data for global clients
+            and turned it into reports their teams used to make decisions.
+          </p>
+          <p>
+            Right now I'm studying <strong>AI</strong> in depth: transformers, encoder–decoder models, RAG and the core types of ML. I also practise DSA in C++ regularly.
+            I learn fast and take ownership of what I build.
+          </p>
+
+          <div class="about-pills">
+            <span><i class="fa-solid fa-bolt"></i> Fast learner</span>
+            <span><i class="fa-solid fa-people-group"></i> Team player</span>
+            <span><i class="fa-solid fa-bug-slash"></i> Debugs calmly</span>
+            <span><i class="fa-solid fa-rocket"></i> Ships end-to-end</span>
+          </div>
+
+          <blockquote class="quote">
+            “A developer always pays his debts.”
+            <cite>— my rule for technical debt: refactor it before it compounds</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="section journey" id="journey">
+      <div class="section-head reveal">
+        <span class="chapter">Chapter II</span>
+        <h2>The Long Road</h2>
+        <p class="section-sub">Experience and milestones, from my first project to the next one.</p>
+      </div>
+
+      <ol class="timeline">
+        <li class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card featured-exp">
+            <span class="tl-date">May 2025 – Aug 2025</span>
+            <h3>Data Scientist Associate · Intern</h3>
+            <p class="tl-org"><i class="fa-solid fa-building"></i> Blackcoffer Pvt. Ltd.</p>
+            <ul>
+              <li>Worked on data analysis for <strong>global clients</strong>, with a focus on business growth.</li>
+              <li>Wrote <strong>Python</strong> solutions for complex data tasks: cleaning, transforming and analysing real datasets.</li>
+              <li>Wrote analytical reports that gave stakeholders clear, actionable insights for strategic decisions.</li>
+            </ul>
+            <div class="chips"><span>Python</span><span>Pandas</span><span>Data Analysis</span><span>Reporting</span></div>
+          </div>
+        </li>
+
+        <li class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">2026</span>
+            <h3>AI meets the cloud</h3>
+            <p>Distilled a teacher LLM into a 70M-parameter student model and deployed it on Kubernetes with autoscaling and CI/CD.
+              Also built a real-time sign-language translator with MediaPipe and OpenCV.</p>
+          </div>
+        </li>
+
+        <li class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">2025 – 2026</span>
+            <h3>EduRate: my flagship full-stack build</h3>
+            <p>A role-based professor rating and analytics platform with JWT security, a performance predictor and automated email reporting.</p>
+          </div>
+        </li>
+
+        <li class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">Feb 2025</span>
+            <h3>Certified in C++</h3>
+            <p>Earned the C++ Programming certificate from IIT Bombay (Spoken Tutorial), plus a MongoDB certification in NoSQL and CRUD operations.</p>
+          </div>
+        </li>
+
+        <li class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">2024</span>
+            <h3>First real-world builds</h3>
+            <p>Shipped an Employment Leave Management System and a Result Management Portal, where I learned how real users break software and how to fix it.</p>
+          </div>
+        </li>
+
+        <li class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">2023</span>
+            <h3>Joined IIIT Manipur</h3>
+            <p>Started B.Tech in Computer Science &amp; Engineering, studying DSA, Operating Systems, Computer Networks and Computer Architecture.</p>
+          </div>
+        </li>
+
+        <li class="tl-item reveal next">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
+            <span class="tl-date">2027 · Next</span>
+            <h3>Your team?</h3>
+            <p>Graduating in 2027 and ready to contribute now as an SDE, data or AI/ML engineer. <a href="#contact">Send me a message →</a></p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section skills" id="skills">
+      <div class="section-head reveal">
+        <span class="chapter">Chapter III</span>
+        <h2>The Armory</h2>
+        <p class="section-sub">The tools I use, grouped by what they're for. Drag the sphere to spin it.</p>
+      </div>
+
+      <div class="skills-layout">
+        <div class="tag-sphere-wrap reveal">
+          <div class="tag-sphere" id="tagSphere" aria-label="Interactive 3D sphere of skills"></div>
+        </div>
+
+        <div class="skill-groups">
+          <div class="skill-card reveal">
+            <h3><i class="fa-solid fa-code"></i> Languages</h3>
+            <div class="chips"><span>Python</span><span>C++ <em>certified</em></span><span>JavaScript</span><span>SQL</span><span>HTML5</span><span>CSS3</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <h3><i class="fa-solid fa-server"></i> Backend &amp; Web</h3>
+            <div class="chips"><span>Node.js</span><span>Express.js</span><span>REST APIs</span><span>FastAPI</span><span>JWT</span><span>bcrypt</span><span>Nodemailer</span><span>Chart.js</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <h3><i class="fa-solid fa-brain"></i> AI / ML &amp; Data</h3>
+            <div class="chips"><span>PyTorch</span><span>Hugging Face</span><span>Knowledge Distillation</span><span>RAG</span><span>Transformers</span><span>OpenCV</span><span>MediaPipe</span><span>Pandas</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <h3><i class="fa-solid fa-cloud"></i> Cloud &amp; DevOps</h3>
+            <div class="chips"><span>Docker</span><span>Kubernetes (k3s/k3d)</span><span>HPA</span><span>Traefik</span><span>GitHub Actions</span><span>S3 / SeaweedFS</span><span>Locust</span><span>Google Cloud</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <h3><i class="fa-solid fa-database"></i> Databases</h3>
+            <div class="chips"><span>MySQL</span><span>MongoDB <em>certified</em></span><span>Schema design</span><span>SQL views</span></div>
+          </div>
+          <div class="skill-card reveal">
+            <h3><i class="fa-solid fa-microchip"></i> Core CS &amp; Tools</h3>
+            <div class="chips"><span>DSA</span><span>Operating Systems</span><span>Computer Networks</span><span>COA</span><span>Git</span><span>Postman</span><span>VS Code</span><span>LaTeX</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AI LAB ============ -->
+    <section class="section ai" id="ai">
+      <div class="section-head reveal">
+        <span class="chapter">Chapter IV</span>
+        <h2>The Citadel</h2>
+        <p class="section-sub">
+          Where I study AI. Some of this I've already used in projects; the rest I'm learning now.
+        </p>
+      </div>
+
+      <!-- RAG pipeline -->
+      <div class="rag reveal">
+        <div class="rag-head">
+          <h3><i class="fa-solid fa-diagram-project"></i> How I think about RAG</h3>
+          <p>Retrieval-Augmented Generation: the model looks up relevant facts first, then answers. Click a stage to see what it does.</p>
+        </div>
+        <div class="rag-flow" id="ragFlow">
+          <button class="rag-step active" data-info="The user's question comes in, e.g. “What is our leave policy for interns?”"><i class="fa-solid fa-comment-dots"></i><span>Query</span></button>
+          <span class="rag-link"><i></i></span>
+          <button class="rag-step" data-info="An encoder model turns the question into a dense vector (embedding), so meaning becomes something you can measure."><i class="fa-solid fa-wave-square"></i><span>Embed</span></button>
+          <span class="rag-link"><i></i></span>
+          <button class="rag-step" data-info="Vector search (cosine similarity) finds the top-k most relevant chunks from the knowledge base."><i class="fa-solid fa-magnifying-glass"></i><span>Retrieve</span></button>
+          <span class="rag-link"><i></i></span>
+          <button class="rag-step" data-info="The retrieved chunks are added to the prompt as context, so the model answers from real sources."><i class="fa-solid fa-layer-group"></i><span>Augment</span></button>
+          <span class="rag-link"><i></i></span>
+          <button class="rag-step" data-info="A decoder LLM generates the final answer from that context: fewer hallucinations, and every answer has a source."><i class="fa-solid fa-wand-magic-sparkles"></i><span>Generate</span></button>
+        </div>
+        <p class="rag-info" id="ragInfo">The user's question comes in, e.g. “What is our leave policy for interns?”</p>
+      </div>
+
+      <div class="ai-grid">
+        <article class="ai-card reveal">
+          <span class="ai-status applied">Used in a project</span>
+          <h3><i class="fa-solid fa-flask"></i> Knowledge Distillation</h3>
+          <p>I trained a small <strong>student</strong> model (Pythia-70M) on a larger <strong>teacher</strong> model's outputs. The student reached <strong>97% valid JSON output</strong> and fits in a container under 2 GB.</p>
+        </article>
+        <article class="ai-card reveal">
+          <span class="ai-status applied">Used in a project</span>
+          <h3><i class="fa-solid fa-hand"></i> Computer Vision</h3>
+          <p>Real-time hand tracking with MediaPipe (21 landmarks per frame), a geometric classifier, and hysteresis plus majority-vote smoothing to stop flicker.</p>
+        </article>
+        <article class="ai-card reveal">
+          <span class="ai-status learning">Learning now</span>
+          <h3><i class="fa-solid fa-shuffle"></i> Encoders &amp; Decoders</h3>
+          <p>Self-attention, and the difference between <strong>encoders</strong> (BERT-style, for understanding and embeddings), <strong>decoders</strong> (GPT-style, for generation) and encoder–decoder models (translation, summarisation).</p>
+        </article>
+        <article class="ai-card reveal">
+          <span class="ai-status learning">Learning now</span>
+          <h3><i class="fa-solid fa-chart-line"></i> ML Foundations</h3>
+          <p><strong>Supervised</strong> learning (regression, classification), <strong>unsupervised</strong> learning (clustering, dimensionality reduction) and <strong>reinforcement</strong> learning, along with evaluation, overfitting and the bias–variance trade-off.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects" id="projects">
+      <div class="section-head reveal">
+        <span class="chapter">Chapter V</span>
+        <h2>The Forge</h2>
+        <p class="section-sub">Things I've built, what problem each one solves, and how.</p>
+      </div>
+
+      <!-- Project 1 -->
+      <article class="project tilt reveal">
+        <div class="project-visual v-cloud" aria-hidden="true">
+          <div class="pv-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+          <div class="pv-orbit"><span></span><span></span><span></span></div>
+          <span class="pv-tag">AI × Cloud</span>
+        </div>
+        <div class="project-body">
+          <span class="project-kicker">Featured · 2026</span>
+          <h3>Cloud-Native LLM Command-Parser Microservice</h3>
+          <p class="project-pitch">
+            A production-style setup for serving a language model. I distilled a large teacher LLM into a
+            <strong>70M-parameter student model</strong> that turns plain-English commands into structured JSON, then deployed it on
+            Kubernetes with autoscaling, zero-downtime rollouts and automated CI/CD.
+          </p>
+          <ul class="project-points">
+            <li>Wrote <strong>sharded parallel workers</strong> to generate teacher labels, and a CPU-optimised sequence-level distillation trainer.</li>
+            <li>Kept the container image <strong>under 2 GB</strong> (1.7 GB) using CPU-only PyTorch wheels; model weights load from S3 (SeaweedFS) when a pod starts.</li>
+            <li>Kubernetes setup: <strong>Traefik ingress, HPA</strong> (70% CPU target), resource limits, network ACLs and subnets.</li>
+            <li><strong>GitHub Actions CI/CD</strong> with secret scanning (Gitleaks), linting, PyTest and a model-quality gate.</li>
+          </ul>
+          <div class="metrics">
+            <div><b>97%</b><span>JSON validity</span></div>
+            <div><b>0.00%</b><span>drops on rolling update</span></div>
+            <div><b>~23s</b><span>pod self-recovery</span></div>
+            <div><b>37/38%</b><span>load-balanced split</span></div>
+          </div>
+          <div class="chips"><span>Python</span><span>PyTorch</span><span>FastAPI</span><span>Docker</span><span>Kubernetes</span><span>Traefik</span><span>GitHub Actions</span><span>Locust</span></div>
+          <div class="project-links">
+            <a href="https://github.com/mohitgora950/cloud" target="_blank" rel="noopener" class="btn btn-small"><i class="fa-brands fa-github"></i> View code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project tilt reverse reveal">
+        <div class="project-visual v-edu" aria-hidden="true">
+          <div class="pv-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="pv-bars"><span style="--h:40%"></span><span style="--h:70%"></span><span style="--h:55%"></span><span style="--h:90%"></span><span style="--h:65%"></span></div>
+          <span class="pv-tag">Full-Stack</span>
+        </div>
+        <div class="project-body">
+          <span class="project-kicker">Flagship · 2025 – 2026</span>
+          <h3>EduRate: Professor Rating &amp; Analytics Platform</h3>
+          <p class="project-pitch">
+            A full-stack platform for IIIT Manipur with three roles (<strong>Student, Professor and Admin</strong>).
+            Students rate professors and raise doubts, professors see their feedback, and admins get an analytics dashboard
+            with predicted performance and automated email reports.
+          </p>
+          <ul class="project-points">
+            <li>Secure auth with <strong>JWT + bcryptjs</strong> and role-based access control across the app.</li>
+            <li>A <strong>performance predictor</strong> that combines a weighted scoring formula with regression.</li>
+            <li>Admin analytics built with <strong>Chart.js</strong>, plus automated email reports through <strong>Nodemailer</strong>.</li>
+            <li>A doubt system with rate limits (max 2 per day) and an abusive-language filter to keep feedback respectful.</li>
+            <li>Normalised <strong>MySQL</strong> schema with SQL views for admin reporting, served by a REST API.</li>
+          </ul>
+          <div class="chips"><span>Node.js</span><span>Express.js</span><span>MySQL</span><span>JWT</span><span>bcryptjs</span><span>Chart.js</span><span>Nodemailer</span></div>
+          <div class="project-links">
+            <a href="https://github.com/mohitgora950/professor-rating-app" target="_blank" rel="noopener" class="btn btn-small"><i class="fa-brands fa-github"></i> View code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project tilt reveal">
+        <div class="project-visual v-sign" aria-hidden="true">
+          <div class="pv-icon"><i class="fa-solid fa-hands-asl-interpreting"></i></div>
+          <svg class="pv-hand" viewBox="0 0 120 120">
+            <g stroke="currentColor" stroke-width="1.5" fill="none" opacity=".7">
+              <path d="M60 100 L60 70 M60 70 L40 50 L32 36 M60 70 L52 40 L50 22 M60 70 L64 38 L66 18 M60 70 L74 42 L80 26 M60 100 L82 80 L94 66" />
+            </g>
+            <g fill="currentColor">
+              <circle cx="60" cy="100" r="3" /><circle cx="60" cy="70" r="3" /><circle cx="40" cy="50" r="2.5" /><circle cx="32" cy="36" r="2.5" />
+              <circle cx="52" cy="40" r="2.5" /><circle cx="50" cy="22" r="2.5" /><circle cx="64" cy="38" r="2.5" /><circle cx="66" cy="18" r="2.5" />
+              <circle cx="74" cy="42" r="2.5" /><circle cx="80" cy="26" r="2.5" /><circle cx="82" cy="80" r="2.5" /><circle cx="94" cy="66" r="2.5" />
+            </g>
+          </svg>
+          <span class="pv-tag">Computer Vision</span>
+        </div>
+        <div class="project-body">
+          <span class="project-kicker">AI · 2026</span>
+          <h3>Real-Time Sign Language Translator</h3>
+          <p class="project-pitch">
+            Recognises hand gestures from a webcam, shows them as text and <strong>speaks them aloud</strong>,
+            fully offline. The aim is to make communication easier for people who sign.
+          </p>
+          <ul class="project-points">
+            <li>Pipeline: OpenCV capture → <strong>MediaPipe HandLandmarker</strong> (21 landmarks) → classifier that accounts for orientation and left/right hand → speech.</li>
+            <li>A custom vocabulary of <strong>up to 256 pose combinations</strong> (5 finger states × 4 orientations × 2 hands).</li>
+            <li>Per-finger <strong>hysteresis</strong> and majority-vote smoothing remove flicker; a gesture is confirmed after about 0.1 s of stability.</li>
+            <li>Speech runs in the background and can be interrupted; webcam-free unit tests cover the logic. Next step: a trained PyTorch model.</li>
+          </ul>
+          <div class="chips"><span>Python</span><span>OpenCV</span><span>MediaPipe</span><span>Text-to-Speech</span><span>PyTest</span></div>
+          <div class="project-links">
+            <a href="https://github.com/mohitgora950/Local-sign-language" target="_blank" rel="noopener" class="btn btn-small"><i class="fa-brands fa-github"></i> View code</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Smaller projects -->
+      <h3 class="mini-title reveal">Earlier builds</h3>
+      <div class="mini-grid">
+        <article class="mini-card tilt reveal">
+          <i class="fa-solid fa-calendar-check"></i>
+          <h4>Employment Leave Management System</h4>
+          <p>A web portal where employees apply for leave and track requests, so leave is no longer tracked in spreadsheets.</p>
+          <span class="mini-year">2024</span>
+        </article>
+        <article class="mini-card tilt reveal">
+          <i class="fa-solid fa-square-poll-vertical"></i>
+          <h4>Result Management Portal</h4>
+          <p>A web app to manage and display student academic results in a clean, searchable interface.</p>
+          <span class="mini-year">2024</span>
+        </article>
+        <a class="mini-card tilt reveal" href="https://github.com/mohitgora950/phoneBook" target="_blank" rel="noopener">
+          <i class="fa-solid fa-address-book"></i>
+          <h4>PhoneBook</h4>
+          <p>A lightweight JavaScript contact manager to add, search and organise contacts in the browser.</p>
+          <span class="mini-year">2025 · <i class="fa-brands fa-github"></i></span>
+        </a>
+      </div>
+
+      <div class="gh-cta reveal">
+        <a href="https://github.com/mohitgora950" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-github"></i> All my code on GitHub</a>
+        <a href="https://leetcode.com/u/momon950/" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-solid fa-code"></i> DSA practice on LeetCode</a>
+      </div>
+    </section>
+
+    <!-- ============ BEYOND CODE ============ -->
+    <section class="section beyond" id="beyond">
+      <div class="section-head reveal">
+        <span class="chapter">Chapter VI</span>
+        <h2>Beyond the Wall</h2>
+        <p class="section-sub">What I do away from the keyboard, and what it's taught me about work.</p>
+      </div>
+
+      <div class="beyond-grid">
+        <article class="beyond-card reveal">
+          <div class="beyond-visual got" aria-hidden="true">
+            <span class="sword"></span>
+            <span class="snow"></span>
+          </div>
+          <h3>Game of Thrones</h3>
+          <p class="beyond-quote">“Valar Morghulis”: all bugs must die.</p>
+          <p>A story full of strategy and long-term planning. My takeaway for engineering: prepare for winter, which means writing tests before production fails.</p>
+        </article>
+
+        <article class="beyond-card reveal">
+          <div class="beyond-visual cricket" aria-hidden="true">
+            <canvas id="ballCanvas"></canvas>
+          </div>
+          <h3>Cricket</h3>
+          <p class="beyond-quote">Read the pitch before you play the shot.</p>
+          <p>Cricket rewards patience and teamwork. It's the same with code: understand the requirements first, then go for the shot.</p>
+        </article>
+
+        <article class="beyond-card reveal">
+          <div class="beyond-visual running" aria-hidden="true">
+            <svg viewBox="0 0 200 90" class="route">
+              <path d="M8 70 C40 20, 70 80, 100 45 S160 10, 192 40" />
+            </svg>
+            <span class="runner"><i class="fa-solid fa-person-running"></i></span>
+          </div>
+          <h3>Running</h3>
+          <p class="beyond-quote">One more kilometre. One more commit.</p>
+          <p>Distance running taught me consistency, and that progress comes from turning up every day, not from motivation.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="section-head reveal">
+        <span class="chapter">Chapter VII</span>
+        <h2>Send a Raven</h2>
+        <p class="section-sub">I usually reply within a day.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-pitch reveal">
+          <div class="open-card">
+            <span class="open-badge static"><span class="pulse-dot"></span> Open to work</span>
+            <h3>Let's build something people use.</h3>
+            <p>
+              I'm looking for <strong>full-time roles and internships</strong> as a
+              <strong>Software Engineer, Full-Stack Developer, Data Scientist or AI/ML Engineer</strong>, remote or on-site.
+            </p>
+            <p>
+              I'm also happy to <strong>collaborate on a startup, side project or open-source</strong> work.
+              If the problem interests me, I'll commit to it fully.
+            </p>
+          </div>
+
+          <div class="contact-list">
+            <a href="mailto:mohitgora950@gmail.com" class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span><small>Email</small>mohitgora950@gmail.com</span>
+              <button type="button" class="copy-btn" data-copy="mohitgora950@gmail.com" aria-label="Copy email"><i class="fa-regular fa-copy"></i></button>
+            </a>
+            <a href="tel:+919509951950" class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span><small>Phone</small>+91 95099 51950</span>
+              <button type="button" class="copy-btn" data-copy="+919509951950" aria-label="Copy phone number"><i class="fa-regular fa-copy"></i></button>
+            </a>
+            <a href="https://wa.me/919509951950" target="_blank" rel="noopener" class="contact-item">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span><small>WhatsApp</small>Chat with me</span>
+              <i class="fa-solid fa-arrow-up-right-from-square ext"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mohit-goraaaa1234/" target="_blank" rel="noopener" class="contact-item">
+              <i class="fa-brands fa-linkedin-in"></i>
+              <span><small>LinkedIn</small>in/mohit-goraaaa1234</span>
+              <i class="fa-solid fa-arrow-up-right-from-square ext"></i>
+            </a>
+            <a href="https://github.com/mohitgora950" target="_blank" rel="noopener" class="contact-item">
+              <i class="fa-brands fa-github"></i>
+              <span><small>GitHub</small>mohitgora950</span>
+              <i class="fa-solid fa-arrow-up-right-from-square ext"></i>
+            </a>
+            <a href="https://leetcode.com/u/momon950/" target="_blank" rel="noopener" class="contact-item">
+              <i class="fa-solid fa-code"></i>
+              <span><small>LeetCode</small>momon950</span>
+              <i class="fa-solid fa-arrow-up-right-from-square ext"></i>
+            </a>
+          </div>
+        </div>
+
+        <form class="raven-form reveal" id="ravenForm" novalidate>
+          <h3><i class="fa-solid fa-feather-pointed"></i> Write your message</h3>
+          <label>
+            <span>Your name</span>
+            <input type="text" name="name" required placeholder="Jane from Acme Corp" />
+          </label>
+          <label>
+            <span>Your email</span>
+            <input type="email" name="email" required placeholder="jane@company.com" />
+          </label>
+          <label>
+            <span>What's it about?</span>
+            <select name="topic">
+              <option>Full-time role</option>
+              <option>Internship</option>
+              <option>Freelance / Collaboration</option>
+              <option>Just saying hi</option>
+            </select>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" required placeholder="Tell me about the role or the idea…"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-dove"></i> Send message</button>
+          <p class="form-note" id="formNote">Opens your email app with the message filled in.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="brand-mark small">MG</span>
+      <p>Built with code, coffee and a little dragonfire · © <span id="year">2026</span> Mohit Gora</p>
+      <a href="#home" class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Dragon Flight · Mohit Gora</title>
+  <meta name="description" content="Fly Mohit Gora's dragon, burn the banners and unlock his GitHub repositories." />
+  <meta name="theme-color" content="#07080a" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307080a'/%3E%3Cpath d='M32 8c4 10 14 14 14 28a14 14 0 0 1-28 0c0-8 5-12 7-18 2 5 4 7 7 8-1-7-1-12 0-18z' fill='%23e8703a'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --gold: #d9a441; --gold-2: #f3d58b; --ember: #e8703a; --ember-2: #ff9a4d;
+      --text: #ece3cf; --dim: #b2a98f; --panel: rgba(14, 12, 10, .78); --line: rgba(217, 164, 65, .3);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: #07080a; color: var(--text); font-family: Inter, system-ui, sans-serif; overflow: hidden; }
+    body { touch-action: none; user-select: none; -webkit-user-select: none; }
+    canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+    a { color: inherit; }
+
+    /* ---------- Intro title ---------- */
+    .title {
+      position: fixed; left: 0; right: 0; top: 50%; transform: translateY(-62%);
+      text-align: center; pointer-events: none; z-index: 5;
+      transition: opacity 1s ease, transform 1.2s ease;
+    }
+    .title.gone { opacity: 0; transform: translateY(-140%) scale(.9); }
+    .title h1 {
+      margin: 0; font-family: Cinzel, serif; font-weight: 900;
+      font-size: clamp(2.2rem, 8.5vw, 7rem); letter-spacing: .06em; line-height: 1.05;
+      color: #f3d58b;
+      text-shadow: 0 0 18px rgba(255, 120, 40, .8), 0 0 50px rgba(232, 80, 20, .5), 0 2px 0 #9a5a16;
+      clip-path: inset(0 100% 0 0);
+      padding: 0 .2em;
+    }
+    .title h1.lit { animation: smoulder 2.6s ease-in-out infinite; }
+    @keyframes smoulder {
+      0%, 100% { text-shadow: 0 0 16px rgba(255, 120, 40, .75), 0 0 46px rgba(232, 80, 20, .45), 0 2px 0 #9a5a16; }
+      50% { text-shadow: 0 0 26px rgba(255, 150, 60, 1), 0 0 80px rgba(232, 80, 20, .7), 0 2px 0 #9a5a16; }
+    }
+    .title p {
+      margin: 14px 0 0; font-family: Cinzel, serif; letter-spacing: .32em; text-transform: uppercase;
+      font-size: clamp(.7rem, 1.6vw, 1rem); color: var(--dim);
+      opacity: 0; transform: translateY(10px); transition: opacity .9s ease, transform .9s ease;
+    }
+    .title.show-sub p { opacity: 1; transform: none; }
+
+    .start {
+      position: fixed; left: 50%; bottom: 14vh; transform: translateX(-50%) translateY(20px);
+      z-index: 6; opacity: 0; pointer-events: none;
+      display: flex; flex-direction: column; align-items: center; gap: 14px;
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .start.show { opacity: 1; pointer-events: auto; transform: translateX(-50%); }
+    .start.gone { opacity: 0; pointer-events: none; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; border: 0; cursor: pointer;
+      padding: 15px 30px; border-radius: 999px; font: 600 1rem Inter, sans-serif; text-decoration: none;
+      color: #1d0f06; background: linear-gradient(135deg, var(--gold-2), var(--ember-2) 55%, var(--ember));
+      box-shadow: 0 0 40px -6px rgba(232, 112, 58, .7);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 0 60px -4px rgba(232, 112, 58, .9); }
+    .btn.ghost { color: var(--text); background: rgba(14, 12, 10, .6); border: 1px solid var(--line); box-shadow: none; }
+    .hint { font-size: .82rem; color: var(--dim); text-align: center; line-height: 1.6; }
+    .hint kbd { font-family: inherit; padding: 2px 7px; border-radius: 5px; border: 1px solid var(--line); background: rgba(255,255,255,.04); }
+
+    /* ---------- HUD ---------- */
+    .hud { position: fixed; top: 14px; left: 14px; right: 14px; z-index: 7; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; pointer-events: none; }
+    .hud > * { pointer-events: auto; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 999px;
+      background: var(--panel); border: 1px solid var(--line); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      font-size: .85rem; text-decoration: none; color: var(--text);
+    }
+    .chip b { color: var(--gold-2); }
+    .hud-right { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+
+    .vault {
+      position: fixed; right: 14px; top: 64px; z-index: 7; width: 290px; max-height: calc(100vh - 90px); overflow: auto;
+      padding: 16px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      transition: transform .4s ease, opacity .4s ease;
+    }
+    .vault.collapsed { transform: translateX(calc(100% + 20px)); opacity: 0; pointer-events: none; }
+    .vault h2 { margin: 0 0 4px; font: 800 .95rem Cinzel, serif; letter-spacing: .12em; color: var(--gold); }
+    .vault .sub { margin: 0 0 12px; font-size: .76rem; color: var(--dim); }
+    .repo { display: block; padding: 11px 12px; border-radius: 12px; margin-bottom: 8px; border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.02); text-decoration: none; transition: border-color .3s, background .3s; }
+    .repo .name { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: .88rem; }
+    .repo .desc { font-size: .76rem; color: var(--dim); margin-top: 4px; line-height: 1.45; }
+    .repo.locked { opacity: .55; pointer-events: none; }
+    .repo.locked .name i { color: #8c8577; }
+    .repo.open { border-color: var(--line); background: rgba(232, 112, 58, .08); }
+    .repo.open .name i { color: var(--ember-2); }
+    .repo.open:hover { border-color: var(--gold); }
+    .repo.flash { animation: flash 1.2s ease; }
+    @keyframes flash { 0% { background: rgba(255, 150, 60, .5); } 100% { background: rgba(232, 112, 58, .08); } }
+
+    .toast {
+      position: fixed; left: 50%; top: 70px; transform: translate(-50%, -20px); z-index: 9; opacity: 0;
+      padding: 14px 20px; border-radius: 14px; background: var(--panel); border: 1px solid var(--gold);
+      backdrop-filter: blur(10px); text-align: center; max-width: min(420px, 92vw);
+      transition: opacity .35s, transform .35s; pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+    .toast h3 { margin: 0 0 4px; font: 800 1rem Cinzel, serif; color: var(--gold-2); letter-spacing: .06em; }
+    .toast p { margin: 0 0 10px; font-size: .84rem; color: var(--dim); }
+    .toast a { font-size: .84rem; color: var(--ember-2); font-weight: 600; }
+
+    .fire-btn {
+      position: fixed; right: 22px; bottom: 26px; z-index: 8; width: 84px; height: 84px; border-radius: 50%;
+      border: 2px solid rgba(255, 170, 90, .6); color: #fff2d8; font-size: 2rem;
+      background: radial-gradient(circle at 50% 40%, #ff9a4d, #b8361c 70%);
+      box-shadow: 0 0 40px rgba(232, 112, 58, .7); display: none; touch-action: none;
+    }
+    .fire-btn.active { transform: scale(.92); box-shadow: 0 0 70px rgba(255, 140, 60, 1); }
+    .touch-hint { position: fixed; left: 50%; bottom: 30px; transform: translateX(-50%); z-index: 7; font-size: .8rem; color: var(--dim); display: none; white-space: nowrap; }
+    body.playing.touch .fire-btn, body.playing.touch .touch-hint { display: block; }
+
+    .win {
+      position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; padding: 20px;
+      background: radial-gradient(circle at 50% 50%, rgba(40, 14, 6, .75), rgba(7, 8, 10, .92));
+      opacity: 0; pointer-events: none; transition: opacity .8s;
+    }
+    .win.show { opacity: 1; pointer-events: auto; }
+    .win-card { text-align: center; max-width: 560px; }
+    .win-card h2 { margin: 0; font: 900 clamp(1.8rem, 6vw, 3.2rem) Cinzel, serif; color: var(--gold-2); letter-spacing: .05em; text-shadow: 0 0 30px rgba(255, 120, 40, .7); }
+    .win-card p { color: var(--dim); line-height: 1.7; margin: 14px 0 26px; }
+    .win-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+    .btn { white-space: nowrap; }
+    @media (max-width: 760px) {
+      .title p { letter-spacing: .14em; padding: 0 16px; }
+      .vault { left: 14px; right: 14px; width: auto; top: auto; bottom: 126px; max-height: 42vh; }
+      .hud .chip span.lbl { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div class="title" id="title">
+    <h1 id="titleText">I AM MOHIT GORA</h1>
+    <p>Software Engineer · AI / ML · Open to Work</p>
+  </div>
+
+  <div class="start" id="start">
+    <button class="btn" id="startBtn"><i class="fa-solid fa-dragon"></i> Mount the dragon</button>
+    <div class="hint" id="startHint">
+      <span class="desk">Move the <b>mouse</b> or use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / arrows to fly · Hold <b>click</b> or <kbd>Space</kbd> to breathe fire</span><br />
+      Burn every banner to unlock my repositories
+    </div>
+  </div>
+
+  <div class="hud" id="hud" style="display:none">
+    <a class="chip" href="index.html"><i class="fa-solid fa-arrow-left"></i> <span class="lbl">Portfolio</span></a>
+    <div class="hud-right">
+      <span class="chip"><i class="fa-solid fa-flag"></i> <b id="burned">0</b>/<span id="total">5</span> <span class="lbl">banners</span></span>
+      <span class="chip"><i class="fa-solid fa-crow"></i> <b id="score">0</b></span>
+      <button class="chip" id="vaultToggle" style="cursor:pointer"><i class="fa-solid fa-book-open"></i> <span class="lbl">Repos</span></button>
+    </div>
+  </div>
+
+  <aside class="vault collapsed" id="vault">
+    <h2>The Vault</h2>
+    <p class="sub">Burn a tower's banner to unlock each repo.</p>
+    <div id="repoList"></div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <button class="fire-btn" id="fireBtn" aria-label="Breathe fire"><i class="fa-solid fa-fire"></i></button>
+  <div class="touch-hint">Drag to fly · hold the flame to breathe fire</div>
+
+  <div class="win" id="win">
+    <div class="win-card">
+      <h2>The Realm Is Yours</h2>
+      <p>You burned every banner and unlocked all my repositories. If you build software or hire people who do,
+        let's talk. I'm <b style="color:#f3d58b">open to work</b> and I commit fully to work I care about.</p>
+      <div class="win-actions">
+        <a class="btn" href="index.html#contact"><i class="fa-solid fa-feather-pointed"></i> Hire me</a>
+        <a class="btn ghost" href="https://github.com/mohitgora950" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        <button class="btn ghost" id="again"><i class="fa-solid fa-rotate"></i> Keep flying</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="dragon.js"></script>
+</body>
+</html>

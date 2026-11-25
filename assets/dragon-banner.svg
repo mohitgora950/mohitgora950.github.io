@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="A dragon breathes fire and reveals the words I AM MOHIT GORA">
+  <title>I am Mohit Gora</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#04050a"/>
+      <stop offset=".55" stop-color="#120b10"/>
+      <stop offset="1" stop-color="#341509"/>
+    </linearGradient>
+    <radialGradient id="moonG" cx=".4" cy=".4" r=".7">
+      <stop offset="0" stop-color="#f4f1e6"/>
+      <stop offset="1" stop-color="#9aa6ad"/>
+    </radialGradient>
+    <radialGradient id="moonHalo">
+      <stop offset="0" stop-color="#a9c6d3" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#a9c6d3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff3cf"/>
+      <stop offset=".35" stop-color="#f3d58b"/>
+      <stop offset=".7" stop-color="#d9a441"/>
+      <stop offset="1" stop-color="#8a5418"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fffbe6"/>
+      <stop offset=".12" stop-color="#ffe08a"/>
+      <stop offset=".4" stop-color="#ff9a3c"/>
+      <stop offset=".75" stop-color="#e2461a" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#8a1a0a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="flameCore" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".5" stop-color="#fff0b0"/>
+      <stop offset="1" stop-color="#ffb347" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="wingG" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8c2614"/>
+      <stop offset=".6" stop-color="#5a160d"/>
+      <stop offset="1" stop-color="#300b07"/>
+    </linearGradient>
+    <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a1a10"/>
+      <stop offset="1" stop-color="#220d09"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#ff8a3a" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ff5a1a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur6" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
+    <filter id="textGlow" x="-10%" y="-40%" width="120%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="7" result="b"/>
+      <feFlood flood-color="#ff6a1a" flood-opacity=".85"/>
+      <feComposite in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="reveal"><rect class="reveal" x="400" y="80" width="800" height="140"/></clipPath>
+
+    <style>
+      .fly    { animation: flyIn 1.6s cubic-bezier(.2,.8,.25,1) both; }
+      .bob    { animation: bob 3.2s ease-in-out 1.6s infinite; }
+      .wingN  { transform-origin: 262px 140px; animation: flap .9s ease-in-out infinite; }
+      .wingF  { transform-origin: 276px 132px; animation: flap .9s ease-in-out -.18s infinite; }
+      .jaw    { transform-origin: 352px 128px; animation: jaw 7s ease-in-out 1.4s infinite; }
+      .fire   { transform-origin: 420px 126px; transform: scaleX(0); opacity: 0; animation: breathe 7s ease-out 1.8s infinite; }
+      .flick  { transform-origin: 420px 126px; animation: flick .14s ease-in-out infinite alternate; }
+      .reveal { transform-origin: 400px 0; transform: scaleX(0); animation: reveal 1.05s cubic-bezier(.4,0,.6,1) 1.95s forwards; }
+      .title  { animation: smoulder 2.8s ease-in-out 3.2s infinite; }
+      .sub    { opacity: 0; animation: fadeUp 1s ease 3.1s forwards; }
+      .cta    { opacity: 0; animation: fadeUp 1s ease 3.6s forwards, pulse 2.4s ease-in-out 4.6s infinite; }
+      .glowF  { opacity: 0; animation: glowF 7s ease-out 1.8s infinite; }
+      .flash  { opacity: 0; animation: lightning 9s linear 4s infinite; }
+      .bolt   { opacity: 0; animation: lightning 9s linear 4s infinite; }
+      .e      { animation: rise 6s linear infinite; }
+      .s      { animation: fall 9s linear infinite; }
+      .eye    { animation: eye 2s ease-in-out infinite alternate; }
+
+      @keyframes flyIn   { from { transform: translate(-520px, 60px) rotate(-6deg); } to { transform: none; } }
+      @keyframes bob     { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+      @keyframes flap    { 0%,100% { transform: scaleY(1); } 50% { transform: scaleY(-.42) skewX(-8deg); } }
+      @keyframes jaw     { 0%,4% { transform: rotate(0); } 7%,30% { transform: rotate(20deg); } 36%,100% { transform: rotate(0); } }
+      @keyframes breathe { 0% { transform: scaleX(0); opacity: 0; } 3% { opacity: 1; } 17% { transform: scaleX(1); opacity: 1; } 30% { transform: scaleX(1.03); opacity: 1; } 40% { transform: scaleX(1.06); opacity: 0; } 100% { transform: scaleX(0); opacity: 0; } }
+      @keyframes flick   { from { transform: scaleY(.9); } to { transform: scaleY(1.12); } }
+      @keyframes reveal  { to { transform: scaleX(1); } }
+      @keyframes smoulder{ 0%,100% { opacity: 1; } 50% { opacity: .86; } }
+      @keyframes fadeUp  { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+      @keyframes pulse   { 0%,100% { opacity: 1; } 50% { opacity: .6; } }
+      @keyframes glowF   { 0% { opacity: 0; } 8%,30% { opacity: 1; } 42%,100% { opacity: 0; } }
+      @keyframes lightning { 0%,90% { opacity: 0; } 91% { opacity: 1; } 92% { opacity: .2; } 93% { opacity: .9; } 96%,100% { opacity: 0; } }
+      @keyframes rise    { from { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } to { transform: translateY(-340px); opacity: 0; } }
+      @keyframes fall    { from { transform: translate(0,0); } to { transform: translate(-60px, 360px); } }
+      @keyframes eye     { from { opacity: .75; } to { opacity: 1; } }
+    </style>
+  </defs>
+
+  <!-- ===== Sky ===== -->
+  <rect width="1200" height="320" fill="url(#sky)"/>
+  <circle cx="1060" cy="70" r="110" fill="url(#moonHalo)"/>
+  <circle cx="1060" cy="70" r="36" fill="url(#moonG)"/>
+  <circle cx="1070" cy="76" r="7" fill="#7e8a92" opacity=".35"/>
+  <circle cx="1048" cy="60" r="4.5" fill="#7e8a92" opacity=".35"/>
+  <g fill="#2a2430" opacity=".55" filter="url(#blur6)">
+    <ellipse cx="200" cy="40" rx="230" ry="26"/>
+    <ellipse cx="760" cy="30" rx="260" ry="22"/>
+    <ellipse cx="1110" cy="105" rx="150" ry="16"/>
+  </g>
+
+  <!-- lightning -->
+  <polyline class="bolt" points="905,0 890,40 912,62 884,110 902,128 878,178" fill="none" stroke="#d6e8ff" stroke-width="2.4"/>
+  <rect class="flash" width="1200" height="320" fill="#c8dcff" opacity="0" style="mix-blend-mode:screen" fill-opacity=".14"/>
+
+  <!-- mountains & castles -->
+  <path d="M0 230 L70 200 L130 214 L210 168 L290 206 L360 186 L450 222 L540 178 L640 210 L720 190 L820 226 L900 186 L1000 214 L1090 180 L1200 206 L1200 320 L0 320Z" fill="#120e13"/>
+  <path d="M0 230 L70 200 L130 214 L210 168 L290 206 L360 186 L450 222 L540 178 L640 210 L720 190 L820 226 L900 186 L1000 214 L1090 180 L1200 206" fill="none" stroke="#a9c6d3" stroke-opacity=".14" stroke-width="1.5"/>
+  <path d="M0 262 L90 240 L180 254 L280 232 L380 258 L470 238 L580 262 L680 236 L790 256 L880 240 L990 262 L1100 238 L1200 252 L1200 320 L0 320Z" fill="#0b090b"/>
+  <g fill="#0b090b">
+    <rect x="980" y="214" width="58" height="60"/><rect x="976" y="196" width="12" height="30"/><rect x="1030" y="190" width="12" height="36"/>
+    <path d="M974 196 L982 182 L990 196Z M1028 190 L1036 174 L1044 190Z"/>
+    <rect x="150" y="224" width="40" height="50"/><rect x="146" y="208" width="10" height="24"/><path d="M144 208 L151 196 L158 208Z"/>
+  </g>
+  <rect x="1002" y="228" width="5" height="8" fill="#ff9a4d" opacity=".8"/>
+  <rect x="164" y="236" width="4" height="7" fill="#ff9a4d" opacity=".7"/>
+  <rect y="290" width="1200" height="30" fill="#3a170c" opacity=".35"/>
+
+  <!-- embers & snow -->
+  <g fill="#ffb066">
+    <circle class="e" cx="120" cy="320" r="1.8" style="animation-delay:0s"/>
+    <circle class="e" cx="260" cy="320" r="1.3" style="animation-delay:-1.4s"/>
+    <circle class="e" cx="430" cy="320" r="2" style="animation-delay:-3.1s"/>
+    <circle class="e" cx="610" cy="320" r="1.5" style="animation-delay:-2.2s"/>
+    <circle class="e" cx="780" cy="320" r="1.9" style="animation-delay:-4.4s"/>
+    <circle class="e" cx="940" cy="320" r="1.4" style="animation-delay:-0.8s"/>
+    <circle class="e" cx="1110" cy="320" r="1.7" style="animation-delay:-5.2s"/>
+    <circle class="e" cx="700" cy="320" r="1.1" style="animation-delay:-3.8s"/>
+  </g>
+  <g fill="#dbeaf2" opacity=".7">
+    <circle class="s" cx="80" cy="-10" r="1.3" style="animation-delay:-1s"/>
+    <circle class="s" cx="340" cy="-10" r="1" style="animation-delay:-4s"/>
+    <circle class="s" cx="560" cy="-10" r="1.4" style="animation-delay:-6s"/>
+    <circle class="s" cx="860" cy="-10" r="1" style="animation-delay:-2.5s"/>
+    <circle class="s" cx="1150" cy="-10" r="1.2" style="animation-delay:-7.5s"/>
+  </g>
+
+  <!-- ===== Title (revealed by fire) ===== -->
+  <g clip-path="url(#reveal)">
+    <g class="title" filter="url(#textGlow)">
+      <text x="808" y="170" text-anchor="middle" font-family="Cinzel, 'Trajan Pro', 'Cormorant Garamond', Georgia, 'Times New Roman', serif" font-weight="800" font-size="62" letter-spacing="6" fill="url(#gold)">I AM MOHIT GORA</text>
+    </g>
+  </g>
+  <text class="sub" x="808" y="214" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" letter-spacing="6" fill="#c9bfa5">SOFTWARE ENGINEER · AI / ML · OPEN TO WORK</text>
+  <text class="cta" x="808" y="262" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="1.5" fill="#ff9a4d">▶ CLICK TO FLY THE DRAGON &amp; EXPLORE MY REPOS</text>
+
+  <!-- ===== Dragon ===== -->
+  <g transform="translate(-10,26) scale(.92)">
+    <g class="fly">
+      <g class="bob">
+        <!-- fire glow -->
+        <ellipse class="glowF" cx="640" cy="126" rx="420" ry="120" fill="url(#glow)"/>
+
+        <!-- far wing -->
+        <g class="wingF">
+          <path d="M276 132 L252 66 L288 16 L212 -24 Q200 10 152 6 Q140 40 116 56 Q130 82 128 106 Q190 126 236 142Z" fill="#2b0b07"/>
+          <path d="M276 132 L252 66 L288 16 M288 16 L212 -24 M288 16 L152 6 M288 16 L116 56 M288 16 L128 106" fill="none" stroke="#140504" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <!-- tail -->
+        <path d="M150 150 C110 150 80 170 50 196 C30 212 10 216 -16 214 L-14 222 C14 226 40 220 62 204 C90 184 116 168 160 166Z" fill="url(#bodyG)"/>
+        <path d="M-14 218 L-40 202 L-30 219 L-40 236Z" fill="#3a140e"/>
+
+        <!-- hind leg -->
+        <path d="M166 164 C176 184 160 196 172 214 L182 214 C172 196 190 186 182 162Z" fill="#24100c"/>
+        <path d="M172 214 l-6 6 M177 214 l0 8 M182 214 l6 6" stroke="#c9b08a" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- body -->
+        <path d="M352 114 C320 106 292 118 268 132 C236 150 200 150 160 148 C150 150 146 160 152 168 C190 176 240 178 270 162 C296 148 322 138 354 136Z" fill="url(#bodyG)" stroke="#963016" stroke-opacity=".5" stroke-width="1.2"/>
+        <path d="M168 164 C200 172 240 172 266 158 C290 146 316 136 350 132" fill="none" stroke="#9a4a22" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+        <!-- dorsal spikes -->
+        <g fill="#170705">
+          <path d="M330 110 L334 96 L340 111Z"/><path d="M314 112 L316 98 L324 114Z"/><path d="M298 118 L298 103 L307 120Z"/>
+          <path d="M282 125 L280 110 L290 128Z"/><path d="M264 134 L261 119 L272 137Z"/><path d="M246 142 L242 128 L254 144Z"/>
+          <path d="M226 147 L221 134 L234 148Z"/><path d="M206 149 L200 137 L214 150Z"/><path d="M186 149 L179 138 L194 150Z"/>
+          <path d="M164 150 L156 140 L172 150Z"/><path d="M120 158 L110 150 L126 160Z"/><path d="M86 176 L74 170 L92 178Z"/><path d="M50 198 L38 194 L56 200Z"/>
+        </g>
+
+        <!-- front leg -->
+        <path d="M282 150 C292 170 280 182 292 198 L302 198 C292 182 306 172 296 146Z" fill="#24100c"/>
+        <path d="M292 198 l-6 6 M297 198 l0 8 M302 198 l6 6" stroke="#c9b08a" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- near wing -->
+        <g class="wingN">
+          <path d="M262 140 L236 72 L272 20 L194 -20 Q182 16 134 10 Q122 46 98 62 Q112 88 110 114 Q170 134 214 150Z" fill="url(#wingG)"/>
+          <path d="M262 140 L236 72 L272 20 M272 20 L194 -20 M272 20 L134 10 M272 20 L98 62 M272 20 L110 114" fill="none" stroke="#2a0d08" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M272 20 l10 -8 l-4 10Z" fill="#c9b08a"/>
+        </g>
+
+        <!-- horns -->
+        <path d="M358 106 C346 88 330 80 310 76 C326 86 338 98 348 112Z" fill="#b8a07a" stroke="#3a2a1a" stroke-width=".8"/>
+        <path d="M350 112 C334 104 318 102 300 104 C316 110 330 116 342 122Z" fill="#b8a07a" stroke="#3a2a1a" stroke-width=".8"/>
+
+        <!-- lower jaw -->
+        <g class="jaw">
+          <path d="M350 128 L414 127 C418 130 414 134 408 135 L360 139 L346 136Z" fill="#33130e"/>
+          <g fill="#efe6d2"><path d="M372 127 l2 -5 l2 5Z"/><path d="M382 127 l2 -5 l2 5Z"/><path d="M392 127 l2 -5 l2 5Z"/><path d="M402 127 l2 -5 l2 5Z"/></g>
+          <path d="M354 138 L342 148 L362 139Z" fill="#1a0705"/>
+        </g>
+
+        <!-- skull -->
+        <path d="M340 116 C352 102 372 100 392 106 L416 113 C424 116 423 121 418 123 L392 126 L352 131 L340 132Z" fill="url(#bodyG)" stroke="#aa3c1c" stroke-opacity=".55" stroke-width="1"/>
+        <g fill="#efe6d2"><path d="M374 127 l2 5 l2 -5Z"/><path d="M386 126 l2 5 l2 -5Z"/><path d="M398 125 l2 5 l2 -5Z"/><path d="M408 124 l2 4 l2 -4Z"/></g>
+        <path d="M362 108 L384 110" stroke="#150504" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M344 120 L328 116 L342 127Z M346 127 L332 132 L346 131Z" fill="#1a0705"/>
+        <ellipse cx="414" cy="115" rx="1.8" ry="1" fill="#0c0302"/>
+        <g class="eye">
+          <circle cx="378" cy="114" r="9" fill="#ff8a2a" opacity=".35" filter="url(#blur2)"/>
+          <ellipse cx="378" cy="114" rx="4" ry="2.6" fill="#ffbf3a"/>
+          <ellipse cx="378.4" cy="114" rx=".9" ry="2.4" fill="#120302"/>
+        </g>
+
+        <!-- fire -->
+        <g class="fire">
+          <g class="flick">
+            <path d="M418 126 C520 96 650 78 880 74 C980 72 1110 88 1250 124 C1110 162 980 180 880 178 C650 174 520 156 418 128Z" fill="url(#flame)" filter="url(#blur6)"/>
+            <path d="M418 126 C510 110 620 102 780 104 C860 106 940 114 1010 126 C940 140 860 148 780 150 C620 150 510 142 418 128Z" fill="url(#flameCore)" filter="url(#blur2)"/>
+            <g fill="#ffcf7a">
+              <circle cx="560" cy="96" r="5" opacity=".7"/><circle cx="700" cy="160" r="6" opacity=".6"/>
+              <circle cx="860" cy="84" r="7" opacity=".5"/><circle cx="1000" cy="170" r="6" opacity=".45"/>
+              <circle cx="1120" cy="104" r="5" opacity=".4"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
