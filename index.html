@@ -229,6 +229,15 @@
         <li class="tl-item reveal">
           <span class="tl-dot"></span>
           <div class="tl-card">
+            <span class="tl-date">Oct 2026 – Now</span>
+            <h3>Shipped Daily use, a product I use every day</h3>
+            <p>Built and deployed a personal vault app (encrypted passwords and documents, diary, search, to-dos) as an installable PWA on Vercel and Neon PostgreSQL. <a href="https://daily-use-xi.vercel.app" target="_blank" rel="noopener" style="color:var(--gold-2);font-weight:600">Try it →</a></p>
+          </div>
+        </li>
+
+        <li class="tl-item reveal">
+          <span class="tl-dot"></span>
+          <div class="tl-card">
             <span class="tl-date">2026</span>
             <h3>AI meets the cloud</h3>
             <p>Distilled a teacher LLM into a 70M-parameter student model and deployed it on Kubernetes with autoscaling and CI/CD.
@@ -386,6 +395,44 @@
         <h2>The Forge</h2>
         <p class="section-sub">Things I've built, what problem each one solves, and how.</p>
       </div>
+
+      <!-- Project 0: Daily use (flagship product) -->
+      <article class="project tilt reverse reveal">
+        <div class="project-visual v-daily" aria-hidden="true">
+          <div class="pv-phone">
+            <span>🔗</span><span>📝</span><span>🔑</span><span>✅</span><span>📔</span><span>📄</span>
+          </div>
+          <div class="pv-lock"><i class="fa-solid fa-lock"></i></div>
+          <span class="pv-tag">Live product · PWA</span>
+        </div>
+        <div class="project-body">
+          <span class="project-kicker">Flagship · Used daily · 2026</span>
+          <h3>Daily use: Personal Vault App</h3>
+          <p class="project-pitch">
+            My own everyday app, now live on the web and installable on <strong>Android, iPhone and desktop</strong>.
+            One secure place for links, screenshots, PDFs, important documents, passwords, notes, a drawing diary and
+            date-wise to-dos, with search that finds everything.
+          </p>
+          <ul class="project-points">
+            <li><strong>Encrypted vault:</strong> passwords, documents and diary are encrypted with <strong>AES-256-GCM</strong> using a key derived from the login password; logins are hashed with bcrypt and rate-limited.</li>
+            <li><strong>Paste anything:</strong> Ctrl+V a screenshot, link or text anywhere and the app asks where to file it. Link titles (e.g. YouTube) are fetched automatically.</li>
+            <li><strong>Smart search</strong> across notes, links, files, PDFs, folders and tasks, tolerant of typos and Hinglish shortcuts (<code>yt</code>, <code>ss</code>).</li>
+            <li><strong>A4 diary</strong> with shapes, arrays and arrows, encrypted PDF export, plus <strong>Images → PDF</strong>, an AI assistant and per-user Google Drive storage.</li>
+            <li><strong>Installable PWA</strong> with app shortcuts, an offline page and Android <em>Share → Daily use</em>; deployed on <strong>Vercel + Neon PostgreSQL</strong>.</li>
+          </ul>
+          <div class="metrics">
+            <div><b>12+</b><span>modules in one app</span></div>
+            <div><b>AES-256</b><span>encrypted vault</span></div>
+            <div><b>3</b><span>platforms: Android, iOS, PC</span></div>
+            <div><b>Live</b><span>used every day</span></div>
+          </div>
+          <div class="chips"><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>PWA</span><span>Service Worker</span><span>AES-256-GCM</span><span>pdf-lib</span><span>Vercel</span></div>
+          <div class="project-links">
+            <a href="https://daily-use-xi.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open live app</a>
+            <a href="https://github.com/mohitgora950/daily-use" target="_blank" rel="noopener" class="btn btn-small"><i class="fa-brands fa-github"></i> View code</a>
+          </div>
+        </div>
+      </article>
 
       <!-- Project 1 -->
       <article class="project tilt reveal">

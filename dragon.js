@@ -18,6 +18,8 @@
       desc: "A lightweight JavaScript contact manager to add, search and organise contacts." },
     { name: "portfolio", title: "This Portfolio", url: "https://github.com/mohitgora950/mohitgora950.github.io",
       desc: "Three.js portfolio and this dragon game, written from scratch in HTML, CSS and JS." },
+    { name: "daily-use", title: "Daily use: Vault App", url: "https://daily-use-xi.vercel.app",
+      desc: "My everyday app: encrypted passwords and documents, notes, diary, smart search and to-dos. A live, installable PWA." },
   ];
   const RANKS = [[0, "Hatchling"], [400, "Fledgling"], [1200, "Drake"], [3000, "Wyvern"], [6000, "Firestorm"], [10000, "Dragonlord"], [16000, "World-Burner"], [25000, "God of Flame"]];
   const COMBO_WORDS = [[10, "DRAGONFIRE"], [7, "INFERNO"], [5, "BLAZE"], [3, "CHAIN"], [2, "COMBO"]];
@@ -190,7 +192,7 @@
     castles = [];
     const castleLen = W + (worldW - W) * 0.55;
     for (let x = 120; x < castleLen; x += 380 + r() * 240) castles.push({ x, w: 60 + r() * 90, h: H * (0.08 + r() * 0.12), towers: 2 + Math.floor(r() * 3), seed: r() });
-    const xs = [0.28, 0.43, 0.58, 0.72, 0.87], hs = [0.5, 0.6, 0.44, 0.57, 0.5];
+    const xs = [0.24, 0.37, 0.5, 0.63, 0.76, 0.89], hs = [0.5, 0.6, 0.44, 0.57, 0.5, 0.64];
     const prev = towers;
     towers = REPOS.map((repo, i) => ({ i, repo, x: worldW * xs[i], top: groundY - H * hs[i], w: 70 * S, heat: prev[i] ? prev[i].heat : 0, burned: prev[i] ? prev[i].burned : false }));
     if (!clouds.length) for (let i = 0; i < 9; i++) clouds.push({ x: rand(0, W * 2), y: rand(H * 0.02, H * 0.35), s: rand(0.8, 2), v: rand(4, 14) });

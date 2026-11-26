@@ -570,6 +570,24 @@ em { font-style: normal; color: var(--ember-2); }
 .v-cloud { background: radial-gradient(circle at 50% 50%, rgba(169, 198, 211, .25), transparent 60%), linear-gradient(160deg, #18242a, #0f1416); color: var(--frost); }
 .v-edu { background: radial-gradient(circle at 50% 50%, rgba(217, 164, 65, .25), transparent 60%), linear-gradient(160deg, #2a2112, #15110a); color: var(--gold-2); }
 .v-sign { background: radial-gradient(circle at 50% 50%, rgba(232, 112, 58, .25), transparent 60%), linear-gradient(160deg, #2a170f, #140c08); color: var(--ember-2); }
+.v-daily { background: radial-gradient(circle at 50% 50%, rgba(155, 140, 255, .28), transparent 60%), linear-gradient(160deg, #1a1733, #0d0c1a); color: #c9c0ff; }
+.pv-phone {
+  position: relative; z-index: 2; display: grid; grid-template-columns: repeat(2, 44px); gap: 10px; padding: 34px 16px 22px;
+  border-radius: 26px; background: #12122a; border: 2px solid currentColor;
+  box-shadow: 0 0 60px -12px currentColor; transform: translateZ(50px) rotate(-6deg);
+  animation: float 6s ease-in-out infinite;
+}
+.pv-phone::before { content: ""; position: absolute; top: 12px; left: 50%; width: 36px; height: 5px; border-radius: 3px; background: currentColor; opacity: .5; transform: translateX(-50%); }
+.pv-phone span { display: grid; place-items: center; height: 48px; border-radius: 12px; font-size: 1.3rem; background: rgba(155, 140, 255, .14); border: 1px solid rgba(201, 192, 255, .35); }
+.pv-lock {
+  position: absolute; right: 16%; bottom: 22%; z-index: 3; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%;
+  font-size: 1.5rem; background: rgba(155, 140, 255, .18); border: 1px solid currentColor; box-shadow: 0 0 30px -6px currentColor;
+  animation: pulseLock 2.4s ease-in-out infinite;
+}
+@keyframes pulseLock { 50% { transform: scale(1.1); } }
+.btn-live { border-color: rgba(201, 192, 255, .6); color: #e4dfff; background: rgba(155, 140, 255, .16); }
+.btn-live:hover { border-color: #c9c0ff; color: #fff; }
+.project-points code { font-family: var(--f-mono); font-size: .85em; color: var(--gold-2); background: rgba(217, 164, 65, .1); padding: 1px 6px; border-radius: 6px; }
 .pv-icon {
   position: relative; z-index: 2;
   display: grid; place-items: center; width: 110px; height: 110px; border-radius: 28px;
