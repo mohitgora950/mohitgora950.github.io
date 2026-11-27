@@ -403,8 +403,9 @@
     }
   }
 
+  let godMode = false;   // screenshot hook only (#sim=...&god=1)
   function hurt(dmg) {
-    if (state !== "play" || P.invuln > 0 || P.boostT > 0) return;
+    if (godMode || state !== "play" || P.invuln > 0 || P.boostT > 0) return;
     P.hp -= dmg; P.invuln = 0.6; P.lastHit = playTime;
     shake = Math.max(shake, 10); hurtFlash = 1;
     if (combo > 1) floatText(dragon.p[0].x, dragon.p[0].y - 40 * S, "COMBO LOST", "#ff7b6b", 14);
@@ -1550,7 +1551,7 @@
   }
 
   /* ================= Loop ================= */
-  // Test hook: dragon.html#sim=10&play=1&fire=1&keys=r&dx=500&dy=-100&boss=1 fast-forwards the simulation (for screenshots)
+  // Test hook: dragon.html#sim=10&play=1&fire=1&keys=r&dx=500&dy=-100&boss=1&god=1&mx=.6&my=.4 fast-forwards the simulation (for screenshots)
   (function simHook() {
     const q = new URLSearchParams(location.hash.slice(1));
     if (!q.has("sim")) return;
@@ -1564,6 +1565,8 @@
         if (q.get("dx")) dragon.p.forEach((pt) => (pt.x += parseFloat(q.get("dx"))));
         if (q.get("dy")) dragon.p.forEach((pt) => (pt.y += parseFloat(q.get("dy"))));
         if (q.get("boss")) summonBoss();
+        if (q.get("god")) godMode = true;
+        if (q.get("mx")) { input.mouseActive = true; input.mx = W * parseFloat(q.get("mx")); input.my = H * parseFloat(q.get("my") || 0.5); }
       }
       update(1 / 60);
     }
